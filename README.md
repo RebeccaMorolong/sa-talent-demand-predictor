@@ -1,4 +1,4 @@
-# SA Talent Demand Predictor — ML Engineering Project
+# SA Talent Demand Predictor - ML Engineering Project
 
 # 🎯 Project Goal
 
@@ -13,8 +13,8 @@ Build an end-to-end ML system that **predicts talent/skill demand across South A
 
 Two interconnected problems to solve:
 
-1. **Predictive Problem** — Which skills will be in demand in which industries over the next 6–24 months?
-2. **Analytical / Causal Problem** — Do degree requirements in job postings correlate with longer vacancy periods, hiring discrimination, or unemployment rates in specific demographics?
+1. **Predictive Problem** - Which skills will be in demand in which industries over the next 6–24 months?
+2. **Analytical / Causal Problem** - Do degree requirements in job postings correlate with longer vacancy periods, hiring discrimination, or unemployment rates in specific demographics?
 
 ---
 
@@ -24,26 +24,26 @@ Two interconnected problems to solve:
 
 | Source | What You Get | Link |
 | --- | --- | --- |
-| **Stats SA (QLFS)** | Quarterly Labour Force Survey — unemployment by province, sector, education level | [stats.gov.za](http://stats.gov.za) |
+| **Stats SA (QLFS)** | Quarterly Labour Force Survey - unemployment by province, sector, education level | [stats.gov.za](http://stats.gov.za) |
 | **DHET** | Graduate output by field, TVET college data | [dhet.gov.za](http://dhet.gov.za) |
 | **SETA Reports** | Sector Skills Plans with demand forecasts (MERSETA, FASSET, INSETA, etc.) | Each SETA has its own portal |
-| **LMIP** | Labour Market Intelligence — occupation & sector data | [lmip.org.za](http://lmip.org.za) |
+| **LMIP** | Labour Market Intelligence - occupation & sector data | [lmip.org.za](http://lmip.org.za) |
 | **World Bank Open Data** | SA employment, education, and economic indicators | [data.worldbank.org](http://data.worldbank.org) |
 
 ## Job Postings (Scraping / APIs)
 
 | Source | Method |
 | --- | --- |
-| **LinkedIn** | API (with approval) or scrape — extract skills vs. degree requirements |
-| **Pnet** | Scrape — skills, degree requirements, location, salary |
+| **LinkedIn** | API (with approval) or scrape - extract skills vs. degree requirements |
+| **Pnet** | Scrape - skills, degree requirements, location, salary |
 | **CareerJunction** | Scrape — industry, seniority, job descriptions |
-| **Indeed ZA** | Scrape — salary bands, time posted |
+| **Indeed ZA** | Scrape - salary bands, time posted |
 
 ## Skill Taxonomy Reference
 
-- **ONET Online** ([onetonline.org](http://onetonline.org)) — rich skill-to-occupation mappings, adaptable to SA context
-- **Kaggle** — search "South Africa unemployment" or "job postings skills" for starter datasets
-- **ISCO** — international standard occupation codes, mappable to SA
+- **ONET Online** ([onetonline.org](http://onetonline.org)) - rich skill-to-occupation mappings, adaptable to SA context
+- **Kaggle** - search "South Africa unemployment" or "job postings skills" for starter datasets
+- **ISCO**-international standard occupation codes, mappable to SA
 
 ---
 
@@ -76,7 +76,7 @@ Dashboard / API
 ## From Job Postings
 
 - Skill mentions (Python, welding, project management, etc.)
-- Degree requirements (yes/no, field, level — matric / diploma / degree / postgrad)
+- Degree requirements (yes/no, field, level - matric / diploma / degree / postgrad)
 - Industry / sector
 - Location (province)
 - Seniority level
@@ -90,15 +90,15 @@ Dashboard / API
 
 ## Key Derived Features
 
-- **Degree requirement rate per industry** — % of postings requiring a degree
-- **Skill gap index** — skills demanded vs. skills in workforce
+- **Degree requirement rate per industry** -% of postings requiring a degree
+- **Skill gap index** - skills demanded vs. skills in workforce
 - **Degree premium vs. skills premium** by sector
 
 ---
 
 # 🤖 ML Models Used In this Project
 
-## Model 1 — Skill Demand Forecasting (Time Series)
+## Model 1 - Skill Demand Forecasting (Time Series)
 
 **Goal:** Predict which skills will grow in demand by industry over the next 12 months.
 
@@ -106,7 +106,7 @@ Dashboard / API
 - **Target:** Skill mention frequency per quarter
 - **Features:** Past demand trends, economic indicators, sector growth rates
 
-## Model 2 — Degree vs. Skills Classifier
+## Model 2 - Degree vs. Skills Classifier
 
 **Goal:** Given a job posting, predict whether it's degree-gated unnecessarily.
 
@@ -114,7 +114,7 @@ Dashboard / API
 - **Target:** Degree required (yes/no) — compare to actual job complexity
 - **Insight:** Exposes bias in posting behavior
 
-## Model 3 — Unemployment Risk by Skills Gap
+## Model 3 - Unemployment Risk by Skills Gap
 
 **Goal:** Predict unemployment probability for a profile given their skills vs. local demand.
 
@@ -122,7 +122,7 @@ Dashboard / API
 - **Target:** Employed / Unemployed
 - **Features:** Skill set, education level, province, age, sector
 
-## Model 4 (Bonus) — NLP Skill Extractor
+## Model 4 (Bonus) - NLP Skill Extractor
 
 **Goal:** Automatically extract skills from job postings and CVs, mapping to a standard taxonomy.
 
@@ -134,9 +134,9 @@ Dashboard / API
 
 This is what makes the project stand out. After modeling, run:
 
-- **Fairness audit** — Does the model disadvantage people with skills but no degree?
-- **Counterfactual analysis** — If degree requirements are removed from postings, how does the predicted talent pool change by race, gender, province?
-- **Disparity analysis** — Compare hiring outcomes across demographic groups
+- **Fairness audit** - Does the model disadvantage people with skills but no degree?
+- **Counterfactual analysis** - If degree requirements are removed from postings, how does the predicted talent pool change by race, gender, province?
+- **Disparity analysis** - Compare hiring outcomes across demographic groups
 
 **Tools:** IBM AI Fairness 360, Microsoft Fairlearn, or manual disparity analysis with pandas
 
@@ -171,7 +171,7 @@ This is what makes the project stand out. After modeling, run:
 
 # 🎯 Potential Impact
 
-This project is publishable and could attract attention from:
+This project is published and aim to attract attention from:
 
 - **NYDA** (National Youth Development Agency)
 - **SETA bodies** looking for evidence-based skills planning
@@ -179,7 +179,3 @@ This project is publishable and could attract attention from:
 - **Academic journals** focused on labour economics and AI fairness
 
 
-
-[Step 7 — API & Dashboard](https://www.notion.so/Step-7-API-Dashboard-3250579a39a48184a7f5cce7c52a2746?pvs=21)
-
-[Project Roadmap](https://www.notion.so/Project-Roadmap-3250579a39a481819d84c5b1f8f284d3?pvs=21)
