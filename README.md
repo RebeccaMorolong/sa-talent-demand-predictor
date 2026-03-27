@@ -96,7 +96,7 @@ Dashboard / API
 
 ---
 
-# 🤖 ML Models
+# 🤖 ML Models Used In this Project
 
 ## Model 1 — Skill Demand Forecasting (Time Series)
 
